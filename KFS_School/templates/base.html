@@ -20,10 +20,9 @@
     <div class="container my-4">
       <div class="row justify-content-center">
         <div class="col-md-10 col-sm-12">
-          <div class="row">
-            <div class="col-6">
-              <h1 class="logo">
-                <a href="{% url 'home' %}">
+          <div class="mb-1 mx-1 d-flex justify-content-between d-flex align-items-center">
+              <div class="logo">
+                <a class="h1" href="{% url 'home' %}">
                   KFS School
                   {% if user.is_authenticated %}
                     {% if user.is_teacher %}
@@ -33,17 +32,17 @@
                     {% endif %}
                   {% endif %}
                 </a>
-              </h1>
-            </div>
-            <div class="col-6 text-right">
-              {% if user.is_authenticated %}
-                <p class="pt-3">Logged in as <strong>{{ user.username }}</strong>. <a href="{% url 'logout' %}">Log out</a>.</p>
-              {% else %}
-                <a href="{% url 'login' %}" class="btn btn-light" role="button">Log in</a>
-                <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Sign up</a>
-              {% endif %}
-            </div>
+              </div>
+              <div>
+                {% if user.is_authenticated %}
+                  <span class="my-auto">Logged in as <strong>{{ user.username }}</strong>. <a class="btn btn-secondary" href="{% url 'logout' %}">Log out</a></span>
+                {% else %}
+                  <a href="{% url 'login' %}" class="btn btn-light mr-1" role="button">Log in</a>
+                  <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Sign up</a>
+                {% endif %}
+              </div>
           </div>
+
           <div class="card mb-3">
             <div class="card-body">
               {% for message in messages %}
