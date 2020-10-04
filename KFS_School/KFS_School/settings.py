@@ -33,7 +33,7 @@ SECRET_KEY = 'gqq9a_44&=q^9x0d)17*6cv)s0j-q$=eqvo901l@++4s0ah8y8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost',  '127.0.0.1']
+ALLOWED_HOSTS = ['localhost',  '127.0.0.1', 'kfs-school.herokuapp.com']
 
 
 # Application definition
