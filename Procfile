@@ -1,1 +1,1 @@
-web: gunicorn KFS_School.wsgi 
+web: gunicorn KFS_School.wsgi --log-file -
