@@ -1,4 +1,4 @@
-# KFS-School
+# KFS-School: Lauren Dutton, Konstantin Kishinsky, Kaniet Oskonbaev, Ruk Lakhani, Nicole Abadie, Anastasia Gallardo
 
 
 ## Setup
