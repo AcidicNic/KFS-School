@@ -5,11 +5,13 @@ from django.db import migrations
 
 def create_subjects(apps, schema_editor):
     Subject = apps.get_model('classroom', 'Subject')
-    Subject.objects.create(name='Arts', color='#343a40')
-    Subject.objects.create(name='Computing', color='#007bff')
-    Subject.objects.create(name='Math', color='#28a745')
-    Subject.objects.create(name='Biology', color='#17a2b8')
-    Subject.objects.create(name='History', color='#ffc107')
+    Subject.objects.create(name='Coding', color='#ffc107')
+    Subject.objects.create(name='Mindfulness', color='#ffc107')
+    Subject.objects.create(name='Breathing', color='#ffc107')
+    Subject.objects.create(name='Yoga Poses', color='#ffc107')
+
+
+
 
 
 class Migration(migrations.Migration):
