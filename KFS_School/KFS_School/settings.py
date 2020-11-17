@@ -99,7 +99,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME':'kfs',
+        'NAME':'postgres',
 
         'USER': 'postgres',
 
@@ -107,7 +107,7 @@ DATABASES = {
 
         'HOST': 'localhost',
 
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 

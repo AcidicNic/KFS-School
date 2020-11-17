@@ -58,6 +58,23 @@
               {% endblock %}
             </div>
           </div>
+
+          {% if user.is_authenticated %}
+            {% if user.is_teacher %}
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <p>
+                          <a href="{% url 'teachers:student_list' %}" class="btn btn-outline-secondary" role="button">Student List</a>
+                          : Check the list of current students.
+                      </p>
+                      <p>
+                          <a href="{% url 'teachers:quiz_change_list' %}" class="btn btn-outline-secondary" role="button">Quiz List</a>
+                          : Check the list of current quizs.
+                      </p>
+                  </div>
+              </div>
+            {% endif %}
+           {% endif %}
           <footer>
           </footer>
         </div>
