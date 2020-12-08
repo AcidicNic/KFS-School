@@ -1,6 +1,6 @@
 # KFS-School: Lauren Dutton, Konstantin Kishinsky, Kaniet Oskonbaev, Ruk Lakhani, Nicole Abadie, Anastasia Gallardo
 
-# Live at: [KFSSchool.herokuapp.com](KFSSchool.herokuapp.com)
+# Live at: [KFSSchool.herokuapp.com](https://KFSSchool.herokuapp.com)
 
 
 ## Setup
