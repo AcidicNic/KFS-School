@@ -178,6 +178,12 @@ MESSAGE_TAGS = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+print(os.environ.get('DATABASE_URL'))
+print(os.environ.get('DATABASE_URL'))
+print(os.environ.get('DATABASE_URL'))
+print(os.environ.get('DATABASE_URL'))
+print(os.environ.get('DATABASE_URL'))
+
 # Heroku DB setting
 import dj_database_url
 if os.environ.get('DATABASE_URL'):
