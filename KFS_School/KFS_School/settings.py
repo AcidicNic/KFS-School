@@ -28,12 +28,14 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gqq9a_44&=q^9x0d)17*6cv)s0j-q$=eqvo901l@++4s0ah8y8'
+SECRET_KEY = 'testing'
+if os.environ.get('SECRET_KEY'):
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'kfs-school.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'kfsschool.herokuapp.com']
 
 
 # Application definition
@@ -88,28 +90,28 @@ WSGI_APPLICATION = 'KFS_School.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 # SQLite config
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-# PostGres DB config
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME':'postgres',
-
-        'USER': 'postgres',
-
-        'PASSWORD': 'postgres',
-
-        'HOST': 'localhost',
-
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# PostGres DB config
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#
+#         'NAME':'postgres',
+#
+#         'USER': 'postgres',
+#
+#         'PASSWORD': 'postgres',
+#
+#         'HOST': 'localhost',
+#
+#         'PORT': '5432',
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
