@@ -90,28 +90,28 @@ WSGI_APPLICATION = 'KFS_School.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 # SQLite config
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-# PostGres DB config
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#
-#         'NAME':'postgres',
-#
-#         'USER': 'postgres',
-#
-#         'PASSWORD': 'postgres',
-#
-#         'HOST': 'localhost',
-#
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+# PostGres DB config
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME':'postgres',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'postgres',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -180,9 +180,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Heroku DB setting
 import dj_database_url
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+if os.environ.get('DATABASE_URL'):
+    db_from_env = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    DATABASES['default'].update(db_from_env)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
