@@ -12,7 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from ..decorators import teacher_required
 from ..forms import BaseAnswerInlineFormSet, QuestionForm, TeacherSignUpForm
-from ..models import Answer, Question, Quiz, User, Student
+from ..models import Answer, Question, Quiz, User, Student, TakenQuiz
 
 
 class TeacherSignUpView(CreateView):
@@ -234,3 +234,11 @@ def ChangePassword(request, pk):
     else:
         student = get_object_or_404(Student, pk=pk)
         return render(request, "classroom/teachers/password_change.html", {"student": student})
+
+
+@login_required
+@teacher_required
+def QuizRetake(request, pk):
+    quiz = Quiz.objects.get(pk=pk)
+    
+    return redirect("teachers:quiz_change_list")
