@@ -7,3 +7,5 @@ venv
 *.pyc
 __pycache__/
 .vscode/
+
+KFS_School/db.sqlite3
