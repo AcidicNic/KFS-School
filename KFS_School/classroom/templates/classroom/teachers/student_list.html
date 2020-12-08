@@ -25,6 +25,8 @@
             </td>
             <td>  <a href="{% url 'teachers:changepassword' student.pk %}" class="btn btn-outline-secondary" role="button">Reset Password</a></td>
           </tr>
+        {% empty %}
+            <p>No students found</p>
         {% endfor %}
       </tbody>
     </table>
